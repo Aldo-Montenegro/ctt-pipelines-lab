@@ -9,13 +9,13 @@ pipeline {
         stage('Test') {
             parallel {
 
-        stage('Unit tests') {
+		stage('Unit tests') {
                     steps {
                         sh './mvnw test -D testGroups=unit'
                     }
                 }
 
-        stage('Integration tests') {
+		stage('Integration tests') {
                     when {
                         expression { return params.RUN_INTEGRATION_TESTS }
                     }
