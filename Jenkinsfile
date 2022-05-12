@@ -6,6 +6,11 @@ pipeline {
     }
 
     stages {
+	stage('pre') {
+		steps {
+			sh 'chmod a+x ./mvnw'
+		}
+	}
         stage('Test') {
             parallel {
 
